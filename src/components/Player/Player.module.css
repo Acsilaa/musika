@@ -1,0 +1,39 @@
+.player_bar{}
+
+/* #player_bar{
+    position: fixed;
+    bottom: 0;
+
+    height: 100px;
+    width: 100%;
+
+    background-color: black;
+
+    display: flex;
+    flex-direction: row;
+    
+    padding: 5px;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    justify-content: space-between;
+
+    border-top: solid blue 3px;
+}
+
+h1{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#media_buttons{
+    
+    width: 40%;
+    justify-content: space-evenly;
+}
+
+#current_playing_image
+{
+    border: 2px solid blue;
+    src: url("../../../public/placeholders/placeholder.png");
+} */
