@@ -5,10 +5,10 @@ import { useContext } from "react";
 
 export default function Player(){
     let [active, setActive] = useState(false);
-    let current: Music | null = useContext(PlayerContext);
+    let currentC = useContext(PlayerContext);
     useEffect(()=>{
         
-    }, [current]);
+    }, [currentC]);
     return(
     <>
        <audio controls>
@@ -16,7 +16,7 @@ export default function Player(){
         </audio>
 
         <div className = {styles.player_bar} onClick={()=>{setActive(p => !p); console.log(active)}}>
-            <img src={current == null ? "/placeholder/placeholder.png" : "/covers/" + current.cover} id= {styles.current_playing_image}></img>
+            <img src={currentC.val == null ? "/placeholder/placeholder.png" : "/covers/" + current.cover} id= {styles.current_playing_image}></img>
             <h1 className={styles.h1}>Dikken Titten</h1>
             <div id = {styles.media_buttons}>
                 <div id = {styles.previous_button}>⏪</div>

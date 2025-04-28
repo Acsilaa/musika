@@ -1,5 +1,5 @@
 import './App.css'
-import { createContext } from 'react';
+import { createContext, useState } from 'react';
 import Home from './components/Home/Home.tsx';
 import Player from './components/Player/Player.tsx';
 import musicdata from './entries.json';
@@ -9,23 +9,36 @@ export type Music = {
   file: string,
   cover: string,
 }
-export const EntriesContext = createContext<Music[]>([]);
-export const PlayerContext = createContext<Music|null>(null);
+
+type EntriesContextType = {
+  val:Music[],
+  setter:(musics: Music[]) => void
+}
+type PlayingContextType = {
+  val:Music | null,
+  setter:(musics: Music) => void
+}
+
+export const EntriesContext = createContext<EntriesContextType>({val: [], setter: ()=>{}});
+export const PlayerContext = createContext<PlayingContextType>({val: null, setter: ()=>{}});
 function App() {
-  let musics: Music[] = [];
+  let [musics, setMusics] = useState<Music[]>([]);
+  let [playing, setPlaying] = useState<Music | null>(null);
+  const esetter = (musics: Music[]) => {setMusics(musics)}
+  const psetter = (music: Music) => {setPlaying(music)}
+
   for (let i = 0; i < musicdata.entries.length; i++) {
-    musics.push({
+    setMusics(m=> [...m , {
       title: musicdata.entries[i].title,
       author: musicdata.entries[i].author,
       file: musicdata.entries[i].file,
       cover: musicdata.entries[i].cover
-    });
+    }]);
   }
-  let currentlyPlaying: Music | null = null;
   return (
     <>
-      <EntriesContext.Provider value={musics}>
-        <PlayerContext.Provider value={currentlyPlaying}>
+      <EntriesContext.Provider value={{val: musics, setter: esetter}}>
+        <PlayerContext.Provider value={{val: playing, setter: psetter}}>
           <Home />
           <Player/>
         </PlayerContext.Provider>
