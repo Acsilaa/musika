@@ -1,18 +1,20 @@
 import { JSX, ReactNode } from 'react';
 import ListRow from './ListRow/ListRow.tsx';
+import { useContext } from 'react';
+import { EntriesContext } from "../../App.tsx"
 import st from './home.module.css';
-
-export default function Home(){
-    let count : number = 5;
-    let rows: ReactNode[] = [];
-    for(let i = 0; i < count; i++){
-        rows.push(<ListRow key={i} author='AC/DC' title='Highway to Hell' cover='music.jpg'></ListRow>);
-    }
-    return(<div className={st.cont}>
+import {Music} from '../../App.tsx';
+export default function Home() {
+    let entries: Music[] = useContext(EntriesContext);
+    return (<div className={st.cont}>
         <h1>Musika</h1>
         <ul className={st.rowscont}>
             {
-                rows.map((e)=>e)
+                entries.map((e,i)=>{
+                    return (
+                        <ListRow key={i} author={e.author} title={e.title} cover={e.cover}></ListRow>
+                    )
+                })
             }
         </ul>
     </div>)
