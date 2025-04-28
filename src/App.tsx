@@ -1,5 +1,5 @@
 import './App.css'
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import Home from './components/Home/Home.tsx';
 import Player from './components/Player/Player.tsx';
 import musicdata from './entries.json';
@@ -27,14 +27,18 @@ function App() {
   const esetter = (musics: Music[]) => {setMusics(musics)}
   const psetter = (music: Music) => {setPlaying(music)}
 
-  for (let i = 0; i < musicdata.entries.length; i++) {
-    setMusics(m=> [...m , {
-      title: musicdata.entries[i].title,
-      author: musicdata.entries[i].author,
-      file: musicdata.entries[i].file,
-      cover: musicdata.entries[i].cover
-    }]);
-  }
+  useEffect(()=>{
+    let temp:Music[] = [];
+    for (let i = 0; i < musicdata.entries.length; i++) {
+      temp.push({
+        title: musicdata.entries[i].title,
+        author: musicdata.entries[i].author,
+        file: musicdata.entries[i].file,
+        cover: musicdata.entries[i].cover
+      });
+    }
+    esetter([...musics, ...temp]);
+  }, [])
   return (
     <>
       <EntriesContext.Provider value={{val: musics, setter: esetter}}>
