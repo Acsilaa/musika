@@ -16,7 +16,7 @@ export default function Player(){
         </audio>
 
         <div className = {styles.player_bar} onClick={()=>{setActive(p => !p); console.log(active)}}>
-            <img src={currentC.val == null ? "/placeholder/placeholder.png" : "/covers/" + currentC.val.cover} id= {styles.current_playing_image}></img>
+            <img src={currentC.val == null ? "/placeholders/placeholder.png" : "/covers/" + currentC.val.cover} id= {styles.current_playing_image}></img>
             <h1 className={styles.h1}>Dikken Titten</h1>
             <div id = {styles.media_buttons}>
                 <div id = {styles.previous_button}>⏪</div>
