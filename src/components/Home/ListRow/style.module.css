@@ -1,0 +1,39 @@
+.element{
+    border-radius: 0;
+    margin-bottom: 20px;
+    padding-left: 0;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.element img{
+    height: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    overflow-clip-margin: unset;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 1px solid #06448b;
+}
+.element .details{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+}
+.element .details p{
+    font-size: 20px;
+    margin: 0;
+}
+.element .details p:nth-child(2){
+    color: gray;
+    font-size: 16px;
+}
+.element:hover{
+    background-color: #3f3f3f;
+}

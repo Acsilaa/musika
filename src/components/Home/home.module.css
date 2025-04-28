@@ -1,0 +1,12 @@
+.rowscont{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.cont{
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+    
+    width: 100vw;
+    max-width: 500px;
+}
