@@ -5,8 +5,8 @@ import Player from './components/Player/Player.tsx';
 function App() {
   return(
     <>
-      {/* <Home/> */}
-      <Player/>
+        <Home/>
+        <Player/>
     </>
   )
 }
