@@ -37,3 +37,6 @@
 .element:hover{
     background-color: #3f3f3f;
 }
+.element:not(.active) .playing{
+    display: none;
+}

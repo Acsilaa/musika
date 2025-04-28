@@ -10,7 +10,8 @@ export default function ListRow(props:RequiredProps){
     return(
         <>
             <li className={st.element} key={props.key}>
-                <img src={props.cover} />
+                <img src="playing.png" className={st.playing} />
+                <img src={"/covers/"+props.cover} />
                 <div className={st.details}>
                     <p>{props.title}</p>
                     <p>{props.author}</p>

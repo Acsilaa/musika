@@ -1,0 +1,22 @@
+{
+    "entries":[
+        {
+            "title": "No Goodbye",
+            "author": "Paul Kalkbrenner",
+            "file": "nogoodbye.mp3",
+            "cover":"nogoodbye.jpg"
+        },
+        {
+            "title": "Schwer",
+            "author": "Paul Kalkbrenner",
+            "file": "schwer.mp3",
+            "cover":"schwer.jpg"
+        },
+        {
+            "title": "Part Eleven",
+            "author": "Paul Kalkbrenner",
+            "file": "part11.mp3",
+            "cover":"part11.jpg"
+        }
+    ]
+}
