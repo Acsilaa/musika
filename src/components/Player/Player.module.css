@@ -1,8 +1,19 @@
 :root{
     --secondary: rgb(6, 68, 139);
     --background: rgb(63, 63, 63);
+    --primary:  rgb(36, 130, 237);
 }
 
+.active_font{
+    font-size: 30px;
+    color: var(--primary);
+    align-self: center;
+    text-align: center;
+}
+
+.active_font:hover{
+    color: var(--secondary);
+}
 
 
 .player_page{
@@ -10,7 +21,7 @@
     height: 100%;
 
     background: #3F3F3F;
-    background: linear-gradient(180deg, rgba(63, 63, 63, 1) 0%, rgba(6, 68, 139, 1) 100%);
+    background: linear-gradient(180deg, var(--background) 20%, var(--secondary) 80%);
     
     position: fixed;
     bottom: -100vh;
@@ -21,13 +32,15 @@
 }
 
 .player_bar{
+    user-select: none;
+
     position: fixed;
     bottom: 0;
 
     height: 100px;
     width: 100%;
 
-    background-color: #3f3f3f;
+    background-color: var(--background);
 
     display: flex;
     flex-direction: row;
@@ -38,7 +51,11 @@
     align-content: center;
     justify-content: space-between;
 
-    border-top: solid #06448b 3px;
+    border-top: solid var(--secondary) 3px;
+}
+
+#audio{
+    visibility: collapse;
 }
 
 .h1{
@@ -55,7 +72,7 @@
 
     font-size: 40px;
 
-    width: 40%;
+    width: 50%;
     justify-content: space-evenly;
 }
 
@@ -67,5 +84,6 @@
     object-fit: cover;
     overflow-clip-margin: unset;
 
-    border: 2px solid #06448b;
+    border: 2px solid var(--secondary);
+    margin: 5px;
 } 
